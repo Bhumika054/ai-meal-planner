@@ -1,0 +1,23 @@
+{
+  "name": "ai-meal-planner",
+  "private": true,
+  "workspaces": ["apps/*"],
+  "scripts": {
+    "postinstall": "npm -ws install",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "npm run dev --workspace=apps/backend",
+    "dev:frontend": "npm run start --workspace=apps/frontend",
+    "start": "npm run dev",
+    "build": "npm run build --workspace=apps/frontend",
+    "install:all": "npm install && npm run postinstall"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "keywords": ["ai", "meal-planner", "react", "nodejs", "food"],
+  "author": "",
+  "license": "ISC",
+  "description": "AI-powered meal planner application with React frontend and Node.js backend"
+}
